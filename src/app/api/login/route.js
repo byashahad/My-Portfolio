@@ -6,7 +6,7 @@ export async function POST(request) {
   if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
     // Response create karo aur cookie set karo
     const response = NextResponse.json(
-      { success: true, message: "Login successful" },
+      { success: true, message: "Login successfull" },
       { status: 200 }
     );
 

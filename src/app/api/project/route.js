@@ -60,9 +60,9 @@ export async function POST(req) {
         // Validation
         if (!title || !description || !duration) {
             return NextResponse.json(
-                { 
-                    success: false, 
-                    message: "Title, description, and duration are required" 
+                {
+                    success: false,
+                    message: "Title, description, and duration are required"
                 },
                 { status: 400 }
             );
@@ -78,10 +78,10 @@ export async function POST(req) {
             } catch (uploadError) {
                 console.error("Media upload error:", uploadError);
                 return NextResponse.json(
-                    { 
-                        success: false, 
+                    {
+                        success: false,
                         message: "Failed to upload media files",
-                        error: uploadError.message 
+                        error: uploadError.message
                     },
                     { status: 500 }
                 );
@@ -101,10 +101,10 @@ export async function POST(req) {
         console.log("✅ Project created:", project._id);
 
         return NextResponse.json(
-            { 
-                success: true, 
-                message: "Project created successfully", 
-                project 
+            {
+                success: true,
+                message: "Project created successfully",
+                project
             },
             { status: 201 }
         );
@@ -117,8 +117,8 @@ export async function POST(req) {
         });
 
         return NextResponse.json(
-            { 
-                success: false, 
+            {
+                success: false,
                 message: "Internal Server Error",
                 error: process.env.NODE_ENV === 'development' ? error.message : undefined
             },
@@ -131,20 +131,20 @@ export async function GET() {
     try {
         await connectDB();
         const projects = await Projects.find({}).sort({ createdAt: -1 });
-        
+
         return NextResponse.json(
-            { 
-                success: true, 
-                projects 
+            {
+                success: true,
+                projects
             },
             { status: 200 }
         );
     } catch (error) {
         console.error("GET error:", error);
         return NextResponse.json(
-            { 
-                success: false, 
-                message: "Internal Server Error" 
+            {
+                success: false,
+                message: "Internal Server Error"
             },
             { status: 500 }
         );

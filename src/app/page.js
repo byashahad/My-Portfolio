@@ -28,7 +28,7 @@ export default function Home() {
     { name: "UI/UX", color: "from-orange-500 to-yellow-400", icon: Palette },
   ]
 
-  // LOADER - Fixed aur better
+  // LOADER 
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0a0a0f] flex flex-col items-center justify-center relative overflow-hidden  ">
@@ -88,7 +88,7 @@ export default function Home() {
               <span className="text-sm text-green-400">Available for new projects</span>
             </div>
           </motion.div>
-          
+
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -96,17 +96,24 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            A curated portfolio showcasing real-world experience 
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">, problem-solving, and scalable digital solutions.</span>
+            Turning ideas into
+            <br />
+            real life products
+            <br />
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              is my calling.
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-white  text-2xl md:text-xl mb-8   "
+            className="text-white text-2xl md:text-xl mb-8"
           >
-            I&apos;m Ashahad Khan, a passionate Full Stack Developer crafting scalable, high-performance web applications with modern technologies.
+            I&apos;m <strong>Ashahad Khan</strong>, a passionate{" "}
+            <strong>Full Stack Developer</strong> crafting scalable, high-performance web
+            applications with modern technologies.
           </motion.p>
 
           <motion.div
@@ -145,17 +152,36 @@ export default function Home() {
             transition={{ delay: 0.8 }}
             className="flex justify-center gap-4"
           >
-            {[Github, Linkedin, Mail].map((Icon, i) => (
-              <motion.a
-                key={i}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                href="https://github.com/ashahadk76-cmd"
-                className="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 transition-colors"
-              >
-                <Icon className="w-6 h-6" />
-              </motion.a>
-            ))}
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://github.com/ashahadk76-cmd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 transition-colors"
+            >
+              <Github className="w-6 h-6" />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://www.linkedin.com/in/ashahad-khan-0b89ab374/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 transition-colors"
+            >
+              <Linkedin className="w-6 h-6" />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              href="mailto:ashahadk76@gmail.com"
+              className="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 transition-colors"
+            >
+              <Mail className="w-6 h-6" />
+            </motion.a>
           </motion.div>
         </div>
 
