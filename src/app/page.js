@@ -155,7 +155,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
-              href="https://github.com/ashahadk76-cmd"
+              href="https://github.com/byashahad"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500 transition-colors"
